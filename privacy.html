@@ -1,61 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Shathpavali</title>
+    <title>Privacy Policy - ShathPavali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            header, footer, .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .content-container { max-width: 100% !important; padding: 0 !important; }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
-    <header class="bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-emerald-600 hover:text-emerald-700 transition-colors">Shathpavali</a>
-            <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-gray-900">&larr; Back to Legal</a>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-100 selection:text-brand-700">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-extrabold text-lg shadow-sm shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                        S
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">ShathPavali</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4 sm:space-x-6 text-sm font-semibold">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition-colors hidden sm:inline-block">Legal Home</a>
+                <a href="terms.html" class="text-slate-600 hover:text-brand-600 transition-colors">Terms of Service</a>
+                <button onclick="window.print()" class="no-print inline-flex items-center px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors">
+                    <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    Print
+                </button>
+            </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-3xl mx-auto px-4 py-12 sm:px-6 lg:px-8 w-full">
-        <article class="prose prose-slate prose-emerald lg:prose-lg mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200">
-            <h1>Privacy Policy for Shathpavali</h1>
-            <p class="text-gray-500 font-medium -mt-4 mb-8">Last Updated: August 5, 2026</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 w-full flex-grow">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
             
-            <p>This Privacy Policy explains how Shathpavali ("we", "our", or "us") collects, uses, and protects your information when you use our iOS application. By using Shathpavali, you agree to the collection and use of information in accordance with this policy.</p>
+            <!-- Sticky Sidebar Table of Contents -->
+            <aside class="no-print hidden lg:block lg:col-span-3 sticky top-24">
+                <nav class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Contents</h3>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="#hipaa-commitment" class="hover:text-brand-600 transition-colors text-brand-600 font-semibold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>HIPAA Commitment</a></li>
+                        <li><a href="#section-1" class="hover:text-brand-600 transition-colors block py-0.5">1. Information We Collect</a></li>
+                        <li><a href="#section-2" class="hover:text-brand-600 transition-colors block py-0.5">2. Where Data is Stored</a></li>
+                        <li><a href="#section-3" class="hover:text-brand-600 transition-colors block py-0.5">3. Third-Party Sharing</a></li>
+                        <li><a href="#section-4" class="hover:text-brand-600 transition-colors block py-0.5">4. Security Measures</a></li>
+                        <li><a href="#section-5" class="hover:text-brand-600 transition-colors block py-0.5">5. Retention & Deletion</a></li>
+                        <li><a href="#section-6" class="hover:text-brand-600 transition-colors block py-0.5">6. GDPR & CCPA Rights</a></li>
+                        <li><a href="#section-7" class="hover:text-brand-600 transition-colors block py-0.5">7. Contact Us</a></li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <a href="terms.html" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center">
+                            View Terms of Service &rarr;
+                        </a>
+                    </div>
+                </nav>
+            </aside>
 
-            <h2>1. HealthKit Data (Strict Privacy)</h2>
-            <p>Shathpavali integrates with Apple's HealthKit to read and write health and fitness data (such as Steps, Active Energy, Blood Glucose, and Walk Workouts).</p>
-            <ul>
-                <li><strong>Your Data Remains Yours</strong>: We do not sell, rent, or share your HealthKit data with any third parties for advertising, marketing, or data mining purposes.</li>
-                <li><strong>On-Device Priority</strong>: The vast majority of your health data remains locally on your device.</li>
-                <li><strong>Apple Intelligence & Siri</strong>: Any integration with Siri or Apple Intelligence processes your health data on your device or via Apple's Private Cloud Compute. We <strong>do not</strong> send your health data to third-party AI models (e.g., OpenAI, Anthropic).</li>
-            </ul>
+            <!-- Main Legal Text Document -->
+            <main class="lg:col-span-9 content-container">
+                <article class="bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-12 lg:p-16 shadow-sm">
+                    
+                    <!-- Document Header -->
+                    <div class="border-b border-slate-100 pb-8 mb-8">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100 mb-3">
+                            Privacy & Compliance
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                            Privacy Policy
+                        </h1>
+                        <p class="text-sm font-medium text-slate-500 mt-2">
+                            <strong>Last Updated:</strong> August 5, 2026
+                        </p>
+                    </div>
 
-            <h2>2. Family Sharing & Cloud Storage</h2>
-            <p>If you explicitly choose to create or join a "Family Group", certain limited progress data (such as meal walk completion status, step counts, and optionally blood sugar levels) will be synced to our secure backend (powered by Supabase) so your family members can see your progress.</p>
-            <ul>
-                <li><strong>Opt-In Only</strong>: Data is only sent to our servers if you actively log into an account and join a Family Group.</li>
-                <li><strong>Encryption</strong>: Data transmitted to and from our servers is encrypted in transit and at rest.</li>
-                <li><strong>Right to Delete</strong>: You can delete your account and all associated Family Sharing data at any time from within the app.</li>
-            </ul>
+                    <!-- Intro -->
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg mb-8">
+                        At ShathPavali (the "App"), your privacy is our core principle. This Privacy Policy details how we collect, use, protect, and handle your data, ensuring strict compliance with Apple's HealthKit guidelines and global privacy standards.
+                    </p>
 
-            <h2>3. Data Retention and Deletion</h2>
-            <p>We retain your Family Sharing data only for as long as your account is active. If you delete your account, all personal data stored on our servers is permanently deleted. Health data stored in Apple HealthKit must be managed or deleted directly through the Apple Health app on your device.</p>
+                    <!-- IMPORTANT ALERT: HIPAA Commitment -->
+                    <div id="hipaa-commitment" class="my-8 rounded-2xl border-2 border-emerald-300 bg-emerald-50/70 p-6 sm:p-8 text-emerald-950 shadow-sm scroll-mt-24">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2.5 bg-emerald-100 text-emerald-700 rounded-xl flex-shrink-0 mt-0.5">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-base sm:text-lg font-bold text-emerald-900 uppercase tracking-wide">
+                                    HIPAA & Data Privacy Commitment
+                                </h2>
+                                <p class="mt-2 text-sm sm:text-base leading-relaxed text-emerald-950/90 font-medium">
+                                    While ShathPavali is a consumer wellness application and may not strictly fall under the legal definition of a "Covered Entity" under the Health Insurance Portability and Accountability Act (HIPAA), we have architected our data infrastructure following strict HIPAA technical safeguards. Your health data is treated as Protected Health Information (PHI). We utilize industry-standard encryption (at rest and in transit) and strict access controls to ensure your data remains confidential.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-            <h2>4. Third-Party Services</h2>
-            <p>We use Supabase for authentication and database management strictly for the Family Sharing feature. Supabase acts as our data processor and is bound by strict confidentiality and GDPR-compliant data processing agreements.</p>
+                    <!-- Section 1 -->
+                    <section id="section-1" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-6">
+                            1. Information We Collect
+                        </h2>
 
-            <h2>5. Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the app and updating the "Last Updated" date.</p>
+                        <!-- Subsection A -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">
+                                A. Health Data (HealthKit & Manual Entry)
+                            </h3>
+                            <p class="text-slate-700 text-sm sm:text-base mb-3 leading-relaxed">
+                                If you grant permission, the App reads and writes data to your device's Apple Health app (HealthKit). This includes:
+                            </p>
+                            <ul class="space-y-2 text-sm sm:text-base text-slate-700 pl-4 list-disc mb-4">
+                                <li><strong>Steps & Walking Data:</strong> To track your post-meal walks and evaluate goal completion.</li>
+                                <li><strong>Blood Glucose Data:</strong> If you choose to log blood sugar readings, we read/write this to HealthKit.</li>
+                            </ul>
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                                <strong class="text-slate-900">Strict HealthKit Data Policy:</strong> We DO NOT use HealthKit data for marketing, advertising, or data mining. We DO NOT sell this data to third-party data brokers. HealthKit data remains primarily on your device.
+                            </div>
+                        </div>
 
-            <h2>6. Contact Us</h2>
-            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact the developer team.</p>
-        </article>
-    </main>
+                        <!-- Subsection B -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">
+                                B. Siri & Apple Intelligence
+                            </h3>
+                            <p class="text-slate-700 text-sm sm:text-base mb-3 leading-relaxed">
+                                ShathPavali integrates with Siri and Apple Intelligence to allow voice commands and semantic queries.
+                            </p>
+                            <ul class="space-y-2 text-sm sm:text-base text-slate-700 pl-4 list-disc">
+                                <li><strong>On-Device Processing:</strong> When you ask Siri for your steps or blood sugar, the query is processed securely on your device or via Apple's Private Cloud Compute.</li>
+                                <li><strong>No Third-Party AI Models:</strong> We <strong>DO NOT</strong> send your health data to third-party Large Language Models (e.g., OpenAI, Anthropic, Google Gemini). Your health data remains within the Apple ecosystem.</li>
+                            </ul>
+                        </div>
 
-    <footer class="bg-white border-t border-gray-200 mt-auto">
-        <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            &copy; 2026 Shathpavali. All rights reserved.
+                        <!-- Subsection C -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">
+                                C. Family Sharing & Cloud Sync (Supabase)
+                            </h3>
+                            <p class="text-slate-700 text-sm sm:text-base mb-3 leading-relaxed">
+                                If you explicitly choose to create an account and join a "Family Group", limited progress data (such as meal walk completion and optionally step counts) will be synced to our secure backend (powered by Supabase) so your family can see your progress.
+                            </p>
+                            <ul class="space-y-2 text-sm sm:text-base text-slate-700 pl-4 list-disc">
+                                <li><strong>Opt-In Only:</strong> Data is only sent to our servers if you actively log into an account and join a Family Group.</li>
+                                <li><strong>Encryption:</strong> Data transmitted to and from our servers is encrypted in transit (TLS/SSL) and at rest.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Subsection D -->
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">
+                                D. Payment and Subscription Data
+                            </h3>
+                            <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                                ShathPavali operates using Apple's in-app purchase infrastructure. We DO NOT collect, process, or store your credit card or billing details. Apple handles all transactions.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section id="section-2" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            2. Where Your Data is Stored
+                        </h2>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Local Storage (Guest Mode):</strong> If you are not logged in, all walk history, meal schedules, and blood sugar readings are stored strictly locally in your device's secure file system.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Cloud Sync (Supabase):</strong> If you create an account, your data is securely synced to our backend infrastructure hosted on Supabase.</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section id="section-3" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            3. Third-Party Sharing
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                            <strong>We do not sell, rent, or trade your personal or health data to third parties.</strong> We only share data with trusted infrastructure providers (like Supabase for database hosting and Apple HealthKit for local health data integration) strictly for the purpose of operating the App. These providers are bound by strict confidentiality and GDPR-compliant data processing agreements.
+                        </p>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section id="section-4" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            4. Security Measures
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
+                            We implement robust, HIPAA-inspired technical safeguards:
+                        </p>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Encryption:</strong> All data transmitted between your device and our servers is encrypted using HTTPS/TLS. Data stored on our servers is encrypted at rest.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Access Control:</strong> Row-Level Security (RLS) is strictly enforced on our database. Your data can only be queried by your authenticated user ID.</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section id="section-5" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            5. Data Retention and Deletion
+                        </h2>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Account Deletion:</strong> You can delete your account and all associated data at any time from within the App settings. Upon deletion, your personal data and health records are permanently scrubbed from our active servers immediately.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>HealthKit Data:</strong> Health data stored in Apple HealthKit must be managed or deleted directly through the Apple Health app on your device.</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 6 -->
+                    <section id="section-6" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            6. Your Data Rights (GDPR & CCPA)
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
+                            You have complete control over your data:
+                        </p>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Right to Access:</strong> You can view all your logged data within the App.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Right to Erasure/Deletion:</strong> You can permanently delete your account and all associated health data directly within the App settings.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Right to Revoke Access:</strong> You can revoke Apple HealthKit permissions at any time via your iOS Settings &gt; Health &gt; Data Access &amp; Devices.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Right to Know:</strong> We disclose all data collection practices fully within this policy. We do not sell your personal information.</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section id="section-7" class="py-6 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            7. Contact Us
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
+                            If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact our Data Protection Officer at:
+                        </p>
+                        <div class="bg-brand-50 border border-brand-100 rounded-2xl p-5 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Email Support &amp; DPO</div>
+                                <a href="mailto:Shathpavali@gmail.com" class="text-base font-bold text-brand-700 hover:underline">
+                                    Shathpavali@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Footer Link inside document -->
+                    <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <a href="terms.html" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center">
+                            &larr; View Terms of Service
+                        </a>
+                        <a href="index.html" class="text-xs font-semibold text-slate-500 hover:text-slate-800">
+                            Back to Legal Hub
+                        </a>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p>&copy; 2026 ShathPavali. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Legal Hub</a>
+                <a href="terms.html" class="hover:text-slate-900 transition-colors">Terms of Service</a>
+                <a href="mailto:Shathpavali@gmail.com" class="hover:text-slate-900 transition-colors">Support</a>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>

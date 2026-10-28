@@ -3,55 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shathpavali - Legal</title>
+    <title>ShathPavali - Legal Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
-    <header class="bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-            <h1 class="text-2xl font-bold text-emerald-600">Shathpavali</h1>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-100 selection:text-brand-700">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-extrabold text-lg shadow-sm shadow-brand-500/30">
+                    S
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-900">ShathPavali</span>
+            </div>
+            <nav class="flex items-center space-x-6 text-sm font-semibold">
+                <a href="terms.html" class="text-slate-600 hover:text-brand-600 transition-colors">Terms of Service</a>
+                <a href="privacy.html" class="text-slate-600 hover:text-brand-600 transition-colors">Privacy Policy</a>
+            </nav>
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8 w-full">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                Legal Information
-            </h2>
-            <p class="mt-4 text-lg text-gray-500">
-                Please review our Privacy Policy and Terms of Service.
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-100 mb-4">
+                Trust & Transparency
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Legal & Privacy Center
+            </h1>
+            <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+                Everything you need to know about our commitment to your privacy, terms of usage, and Apple HealthKit integration.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <!-- Privacy Policy Card -->
-            <a href="privacy.html" class="block group">
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 h-full transition-all duration-200 hover:shadow-md hover:border-emerald-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">Privacy Policy</h3>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <!-- Terms of Service Card -->
+            <a href="terms.html" class="group relative bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-xl hover:border-brand-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 border border-amber-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
                     </div>
-                    <p class="text-gray-600">Understand how we collect, use, and protect your information, including Apple HealthKit data and Family Sharing.</p>
+                    <div class="flex items-center justify-between mb-2">
+                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Terms of Service
+                        </h2>
+                        <span class="text-xs font-medium text-slate-400">Updated Aug 2026</span>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mt-2">
+                        Includes our strict medical disclaimer, limitation of liability, assumption of risk during walking, billing, and dispute arbitration clauses.
+                    </p>
+                </div>
+                <div class="mt-8 flex items-center text-sm font-semibold text-brand-600 group-hover:translate-x-1 transition-transform">
+                    Read Terms of Service
+                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </div>
             </a>
 
-            <!-- Terms of Service Card -->
-            <a href="terms.html" class="block group">
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 h-full transition-all duration-200 hover:shadow-md hover:border-emerald-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">Terms of Service</h3>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <!-- Privacy Policy Card -->
+            <a href="privacy.html" class="group relative bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-xl hover:border-brand-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
                     </div>
-                    <p class="text-gray-600">Read the rules and guidelines for using the Shathpavali application, including important medical disclaimers.</p>
+                    <div class="flex items-center justify-between mb-2">
+                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Privacy Policy
+                        </h2>
+                        <span class="text-xs font-medium text-slate-400">Updated Aug 2026</span>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mt-2">
+                        Details our HIPAA-inspired technical safeguards, local-first on-device Apple HealthKit storage, Siri & Apple Intelligence protection, and Family Sharing.
+                    </p>
                 </div>
+                <div class="mt-8 flex items-center text-sm font-semibold text-brand-600 group-hover:translate-x-1 transition-transform">
+                    Read Privacy Policy
+                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <!-- Contact & Help Box -->
+        <div class="mt-16 bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+                <h3 class="text-lg font-bold text-slate-900">Have questions about your data or these policies?</h3>
+                <p class="text-slate-600 text-sm mt-1">Our Data Protection Officer and support team are available to help.</p>
+            </div>
+            <a href="mailto:Shathpavali@gmail.com" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-colors shadow-sm whitespace-nowrap">
+                Contact Shathpavali@gmail.com
             </a>
         </div>
     </main>
 
-    <footer class="bg-white border-t border-gray-200 mt-auto">
-        <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            &copy; 2026 Shathpavali. All rights reserved.
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p>&copy; 2026 ShathPavali. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="terms.html" class="hover:text-slate-900 transition-colors">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a>
+                <a href="mailto:Shathpavali@gmail.com" class="hover:text-slate-900 transition-colors">Support</a>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>

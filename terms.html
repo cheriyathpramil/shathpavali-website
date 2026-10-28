@@ -1,64 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Shathpavali</title>
+    <title>Terms of Service - ShathPavali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            header, footer, .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .content-container { max-width: 100% !important; padding: 0 !important; }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
-    <header class="bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-emerald-600 hover:text-emerald-700 transition-colors">Shathpavali</a>
-            <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-gray-900">&larr; Back to Legal</a>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-100 selection:text-brand-700">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-extrabold text-lg shadow-sm shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                        S
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">ShathPavali</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4 sm:space-x-6 text-sm font-semibold">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition-colors hidden sm:inline-block">Legal Home</a>
+                <a href="privacy.html" class="text-slate-600 hover:text-brand-600 transition-colors">Privacy Policy</a>
+                <button onclick="window.print()" class="no-print inline-flex items-center px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors">
+                    <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    Print
+                </button>
+            </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-3xl mx-auto px-4 py-12 sm:px-6 lg:px-8 w-full">
-        <article class="prose prose-slate prose-emerald lg:prose-lg mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200">
-            <h1>Terms of Service for Shathpavali</h1>
-            <p class="text-gray-500 font-medium -mt-4 mb-8">Last Updated: August 5, 2026</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 w-full flex-grow">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
             
-            <p>Please read these Terms of Service ("Terms") carefully before using the Shathpavali application ("Service") operated by the developers ("we", "us", or "our").</p>
+            <!-- Sticky Sidebar Table of Contents -->
+            <aside class="no-print hidden lg:block lg:col-span-3 sticky top-24">
+                <nav class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Contents</h3>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="#medical-disclaimer" class="hover:text-amber-600 transition-colors text-amber-600 font-semibold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Medical Disclaimer</a></li>
+                        <li><a href="#section-1" class="hover:text-brand-600 transition-colors block py-0.5">1. Release of Liability</a></li>
+                        <li><a href="#section-2" class="hover:text-brand-600 transition-colors block py-0.5">2. No Warranty ("As Is")</a></li>
+                        <li><a href="#section-3" class="hover:text-brand-600 transition-colors block py-0.5">3. Limitation of Liability</a></li>
+                        <li><a href="#section-4" class="hover:text-brand-600 transition-colors block py-0.5">4. Privacy & Data Security</a></li>
+                        <li><a href="#section-5" class="hover:text-brand-600 transition-colors block py-0.5">5. Third-Party Services</a></li>
+                        <li><a href="#section-6" class="hover:text-brand-600 transition-colors block py-0.5">6. Subscriptions & Billing</a></li>
+                        <li><a href="#section-7" class="hover:text-brand-600 transition-colors block py-0.5">7. Dispute Arbitration</a></li>
+                        <li><a href="#section-8" class="hover:text-brand-600 transition-colors block py-0.5">8. Indemnification</a></li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <a href="privacy.html" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center">
+                            View Privacy Policy &rarr;
+                        </a>
+                    </div>
+                </nav>
+            </aside>
 
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.</p>
+            <!-- Main Legal Text Document -->
+            <main class="lg:col-span-9 content-container">
+                <article class="bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-12 lg:p-16 shadow-sm">
+                    
+                    <!-- Document Header -->
+                    <div class="border-b border-slate-100 pb-8 mb-8">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 mb-3">
+                            Legal Document
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                            Terms of Service
+                        </h1>
+                        <p class="text-sm font-medium text-slate-500 mt-2">
+                            <strong>Last Updated:</strong> August 5, 2026
+                        </p>
+                    </div>
 
-            <h2>2. STRICT MEDICAL DISCLAIMER — NOT MEDICAL ADVICE</h2>
-            <p><strong>SHATHPAVALI IS NOT A MEDICAL DEVICE, NOR IS IT A SUBSTITUTE FOR PROFESSIONAL MEDICAL ADVICE, DIAGNOSIS, OR TREATMENT.</strong></p>
-            <p>The Service, including any step tracking, blood sugar data displays, or meal scheduling, is provided for informational and lifestyle tracking purposes only.</p>
-            <ul>
-                <li>You should never disregard professional medical advice or delay in seeking it because of something you have read or tracked in this app.</li>
-                <li>We do not guarantee that using this app will improve your health, lower your blood sugar, or treat conditions such as Diabetes.</li>
-                <li>Always consult with your physician before beginning any new exercise routine, including post-meal walking.</li>
-            </ul>
+                    <!-- Intro -->
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg mb-8">
+                        Welcome to ShathPavali (the "App"). By downloading, accessing, or using the App, you ("User", "you", or "your") explicitly agree to be bound by these Terms of Service ("Terms"). If you do not agree to every single provision of these Terms, you must immediately delete and cease using the App.
+                    </p>
 
-            <h2>3. Assumption of Risk</h2>
-            <p>By using the Service to track physical activity (walking), you acknowledge that physical exercise involves inherent risks of injury. You assume all risk of injury, illness, or death arising out of your use of the Service. You agree that we are not liable for any physical injuries or property damage you may suffer while walking or using your device.</p>
+                    <!-- WARNING ALERT: Strict Medical Disclaimer -->
+                    <div id="medical-disclaimer" class="my-8 rounded-2xl border-2 border-amber-300 bg-amber-50/70 p-6 sm:p-8 text-amber-950 shadow-sm scroll-mt-24">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2.5 bg-amber-100 text-amber-700 rounded-xl flex-shrink-0 mt-0.5">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-base sm:text-lg font-bold text-amber-900 uppercase tracking-wide">
+                                    Strict Medical Disclaimer: Not Medical Advice. Use at Your Own Risk.
+                                </h2>
+                                <p class="mt-2 text-sm sm:text-base leading-relaxed text-amber-900/90 font-medium">
+                                    ShathPavali is strictly an informational software tool designed to track lifestyle metrics. <strong>The App is NOT a medical device, and the content provided is NOT intended to be a substitute for professional medical advice, diagnosis, or treatment.</strong> We make absolutely no claims regarding health improvements, blood sugar management, or diabetes care. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this App. In a medical emergency, call your doctor or emergency services immediately.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-            <h2>4. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WE, OUR AFFILIATES, AGENTS, DIRECTORS, OR EMPLOYEES BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES, THAT RESULT FROM THE USE OF, OR INABILITY TO USE, THIS SERVICE.<br>
-            Under no circumstances will we be responsible for any damage, loss, or injury resulting from hacking, tampering, or other unauthorized access or use of the Service or your account.</p>
+                    <!-- Section 1 -->
+                    <section id="section-1" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            1. Absolute Release of Liability & Assumption of Risk
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                            You expressly acknowledge and agree that your use of the App is entirely at your own risk. Physical activities such as walking, exercising, and managing diet or blood sugar carry severe inherent risks of physical injury, medical complications, or death. <strong>By using the App, you voluntarily assume all risks, both known and unknown.</strong> You fully release, indemnify, and forever hold harmless the creators, developers, owners, and affiliates of ShathPavali from any and all claims, demands, damages (actual and consequential), or liabilities of every kind and nature, arising out of your use of the App.
+                        </p>
+                    </section>
 
-            <h2>5. User Accounts & Family Sharing</h2>
-            <p>When you create an account to use the Family Sharing feature, you must provide accurate information. You are responsible for safeguarding your account password or authentication tokens. You agree not to use the Service to harass, abuse, or unlawfully monitor other family members.</p>
+                    <!-- Section 2 -->
+                    <section id="section-2" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            2. No Warranty ("As Is" and "As Available")
+                        </h2>
+                        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 text-slate-700 text-xs sm:text-sm font-mono leading-relaxed">
+                            THE APP AND ALL RELATED SERVICES ARE PROVIDED ON AN STRICTLY "AS IS" AND "AS AVAILABLE" BASIS, WITH ALL FAULTS. WE EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE MAKE ABSOLUTELY NO WARRANTY THAT THE APP WILL MEET YOUR REQUIREMENTS, BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE. WE DISCLAIM ANY RESPONSIBILITY FOR ANY HARM RESULTING FROM DOWNLOADING OR ACCESSING ANY INFORMATION OR MATERIAL THROUGH THE APP.
+                        </div>
+                    </section>
 
-            <h2>6. Indemnification</h2>
-            <p>You agree to defend, indemnify and hold harmless the developers, our contractors, and licensors, and their respective directors, officers, employees and agents, from and against any and all claims and expenses, including attorneys’ fees, arising out of your use of the Service, including but not limited to your violation of this Agreement.</p>
+                    <!-- Section 3 -->
+                    <section id="section-3" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            3. Limitation of Liability
+                        </h2>
+                        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 text-slate-700 text-xs sm:text-sm font-mono leading-relaxed space-y-3">
+                            <p>
+                                TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SHATHPAVALI, ITS CREATORS, DEVELOPERS, AFFILIATES, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, MEDICAL BILLS, PERSONAL INJURY, WRONGFUL DEATH, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO THE USE OF, OR INABILITY TO USE, THE APP.
+                            </p>
+                            <p>
+                                THIS LIMITATION OF LIABILITY APPLIES WHETHER THE ALLEGED LIABILITY IS BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR ANY OTHER BASIS, EVEN IF SHATHPAVALI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+                            </p>
+                        </div>
+                    </section>
 
-            <h2>7. Governing Law</h2>
-            <p>These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which the developer resides, without regard to its conflict of law provisions.</p>
+                    <!-- Section 4 -->
+                    <section id="section-4" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            4. Privacy and Data Security
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
+                            Your privacy is important to us, but you acknowledge that no digital system is 100% secure.
+                        </p>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Data Ownership:</strong> You own your health data.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Local Storage First:</strong> If you use the App as a guest, your data never leaves your device.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Encrypted Sync & Family Sharing:</strong> If you create an account to use Family Sharing, data is synced securely to our encrypted backend. We do not sell your health data to third-party brokers.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>No Liability for Breaches:</strong> We expressly disclaim any liability for unauthorized access, hacking, data breaches, or data loss.</span>
+                            </li>
+                        </ul>
+                    </section>
 
-            <h2>8. Changes to Terms</h2>
-            <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
-        </article>
-    </main>
+                    <!-- Section 5 -->
+                    <section id="section-5" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            5. Third-Party Services
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                            The App utilizes third-party services (e.g., Apple HealthKit, Supabase, Google, Apple Sign-In). ShathPavali is not responsible for the availability, security, or performance of these third-party services. We expressly disclaim any liability for data breaches, outages, or losses caused by third-party infrastructure.
+                        </p>
+                    </section>
 
-    <footer class="bg-white border-t border-gray-200 mt-auto">
-        <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            &copy; 2026 Shathpavali. All rights reserved.
+                    <!-- Section 6 -->
+                    <section id="section-6" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            6. Subscriptions, Free Trials, and Billing
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
+                            The App operates on a subscription basis. By selecting a subscription (e.g., Monthly or Yearly), you agree to pay the fees associated with the selected plan.
+                        </p>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-6 flex items-center sm:h-7"><span class="w-2 h-2 rounded-full bg-brand-500 mr-3 flex-shrink-0"></span></span>
+                                <span><strong>Refunds:</strong> All payments are processed entirely by Apple. ShathPavali cannot and will not grant refunds under any circumstances. You must contact Apple Support for any billing disputes.</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section id="section-7" class="py-6 border-b border-slate-100 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            7. Dispute Resolution and Binding Arbitration
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
+                            These Terms shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to its conflict of law principles. Any dispute, claim, or controversy arising out of or relating to these Terms or your use of the App shall be resolved exclusively through final and binding arbitration, rather than in court.
+                        </p>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wide leading-relaxed">
+                            CLASS ACTION WAIVER: YOU AND SHATHPAVALI AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.
+                        </div>
+                    </section>
+
+                    <!-- Section 8 -->
+                    <section id="section-8" class="py-6 scroll-mt-24">
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
+                            8. Indemnification
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                            You agree to aggressively defend, indemnify, and hold harmless ShathPavali, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the App.
+                        </p>
+                    </section>
+
+                    <!-- Contact Footer in Document -->
+                    <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p class="text-xs text-slate-500">
+                            Questions regarding these terms? Contact <a href="mailto:Shathpavali@gmail.com" class="text-brand-600 font-semibold hover:underline">Shathpavali@gmail.com</a>
+                        </p>
+                        <a href="privacy.html" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center">
+                            Continue to Privacy Policy &rarr;
+                        </a>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p>&copy; 2026 ShathPavali. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Legal Hub</a>
+                <a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a>
+                <a href="mailto:Shathpavali@gmail.com" class="hover:text-slate-900 transition-colors">Support</a>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>
